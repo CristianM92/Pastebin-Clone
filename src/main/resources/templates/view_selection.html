@@ -8,6 +8,10 @@
 
 </head>
 <body>
+<nav class="navbar navbar-dark bg-primary">
+	<span class="navbar-brand mb-0 h1">Pastebin</span>
+	<span class="navbar-brand mb-0 h1"><b>[[${#request.userPrincipal.principal.username}]]</b></span>
+</nav>
 <table>
 	<tr>
 		<td th:text="${pastes.pasteName}" style="font-weight: bold;">Name1 </td>

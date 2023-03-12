@@ -1,10 +1,9 @@
 package com.example.PastebinClone.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 
 @Entity
 @Table(name="paste")

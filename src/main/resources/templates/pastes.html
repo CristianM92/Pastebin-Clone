@@ -8,6 +8,12 @@
 
 </head>
 <body>
+<nav class="navbar navbar-dark bg-primary">
+    <span class="navbar-brand mb-0 h1"><b>[[${#request.userPrincipal.principal.username}]]</b></span>
+    <form class="d-flex" th:action="@{/logout}" method="post">
+        <button class="btn btn-dark" type="submit">Sign Out</button>
+    </form>
+</nav>
 <table>
     <tr>
         <td>
@@ -73,7 +79,7 @@
                         </tr>
                         <tr>
                             <td>Password NEW </td>
-                            <td><input type="checkbox" name="passwordStatus">  Enabled</td>
+                            <td><input type="checkbox" name="passwordStatus">Enabled</td>
                         </tr>
                         <tr>
                             <td> </td>
@@ -81,7 +87,7 @@
                         </tr>
                         <tr>
                             <td> </td>
-                            <td><input type="checkbox" name="burnAfterRead"> Burn after read NEW</td>
+                            <td><input type="checkbox" name="burnAfterRead">Burn after read NEW</td>
                         </tr>
                         <tr>
                             <td>Paste Name / Title: </td>

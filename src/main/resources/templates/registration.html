@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Registration</title>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-primary">
+  <span class="navbar-brand mb-0 h1">Pastebin Clone</span>
+</nav>
+<br><br>
+<div class="container text-center">
+  <div>
+    <h2>User Registration - Sign Up!</h2>
+  </div>
+  <form th:action="@{/process_register}" method="post" th:object="${user}"
+        style="max-width: 400px; margin: 0 auto;">
+    <div class="m-3">
+      <div class="form-group row">
+        <label class="col-form-label col-4">E-mail</label>
+        <div class="col-8">
+          <input type="email" class="form-control" th:field="*{email}" required/>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-form-label col-4">Username</label>
+        <div class="col-8">
+          <input type="text" class="form-control" th:field="*{username}" required
+                 minlength="4" maxlength="20"/>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-form-label col-4">Password</label>
+        <div class="col-8">
+          <input type="password" class="form-control" th:field="*{password}" required
+                 minlength="6" maxlength="16"/>
+        </div>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-success">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+</body>
+</html>
