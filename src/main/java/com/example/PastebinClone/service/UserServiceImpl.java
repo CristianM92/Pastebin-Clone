@@ -3,6 +3,7 @@ package com.example.PastebinClone.service;
 import com.example.PastebinClone.dto.UserRegistrationDTO;
 import com.example.PastebinClone.repository.UserRepository;
 import com.example.PastebinClone.security.SecurityUserDetails;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -11,12 +12,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private final UserRepository userRepo;
-
-    public UserServiceImpl(UserRepository userRepo) {
-        super();
-        this.userRepo = userRepo;
-    }
+    @Autowired
+    private UserRepository userRepo;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
