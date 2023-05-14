@@ -17,13 +17,13 @@ public class PasteController {
         this.pasteService = pasteService;
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @GetMapping
     public String getPastes(Model model) {
         model.addAttribute("pastes", this.pasteService.getAllPastes());
         return "pastes";
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @PostMapping
     public String addPaste1(@ModelAttribute(value="pastebinclone") PasteDTO pasteNew, Model model) {
         pasteService.addPaste(pasteNew);
         model.addAttribute("pastes", this.pasteService.getAllPastes());
